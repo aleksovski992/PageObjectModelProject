@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -23,6 +22,10 @@ public class CreateAccountPage {
     By postCode = By.id("postcode");
     By mobilePhone = By.id("phone_mobile");
     By registerButton = By.id("submitAccount");
+    By dayOfBirth = By.id("days");
+    By monthOfBirth = By.id("months");
+    By yearOfBirth = By.id("years");
+    By stateSelectBtn = By.id("id_state");
 
     public CreateAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -33,32 +36,31 @@ public class CreateAccountPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(titleMrBtn)).click();
     }
 
-    public void inputFirstName() {
+    public void inputFirstName(String name) {
         wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameBtn)).sendKeys("Aleksandar");
-        //driver.findElement(firstNameBtn).sendKeys("Aleksandar");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameBtn)).sendKeys(name);
     }
 
-    public void inputLastName() {
-        driver.findElement(lastNameBtn).sendKeys("Aleksovski");
+    public void inputLastName(String lastName) {
+        driver.findElement(lastNameBtn).sendKeys(lastName);
     }
 
-    public void inputPassword() {
-        driver.findElement(passwordBtn).sendKeys("AceAce!1234");
+    public void inputPassword(String pass) {
+        driver.findElement(passwordBtn).sendKeys(pass);
     }
 
     public void selectBirthDay(int index) {
-        Select days = new Select(driver.findElement(By.id("days")));
+        Select days = new Select(driver.findElement(dayOfBirth));
         days.selectByIndex(index);
     }
 
     public void selectBirthMonth(int index) {
-        Select birthMonth = new Select(driver.findElement(By.id("months")));
+        Select birthMonth = new Select(driver.findElement(monthOfBirth));
         birthMonth.selectByValue(String.valueOf(index));
     }
 
     public void selectBirthYear(int index) {
-        Select birthYear = new Select(driver.findElement(By.id("years")));
+        Select birthYear = new Select(driver.findElement(yearOfBirth));
         birthYear.selectByValue(String.valueOf(index));
     }
 
@@ -66,8 +68,8 @@ public class CreateAccountPage {
         driver.findElement(companyName).sendKeys(nameOfCompany);
     }
 
-    public void inputCompanyAddress(String companyAdress) {
-        driver.findElement(companyAddress).sendKeys(companyAdress);
+    public void inputCompanyAddress(String addressOfCompany) {
+        driver.findElement(companyAddress).sendKeys(addressOfCompany);
     }
 
     public void inputCity(String cityOfLiving) {
@@ -75,7 +77,7 @@ public class CreateAccountPage {
     }
 
     public void selectState(int index) {
-        Select state = new Select(driver.findElement(By.id("id_state")));
+        Select state = new Select(driver.findElement(stateSelectBtn));
         state.selectByValue(String.valueOf(index));
     }
 

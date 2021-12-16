@@ -1,7 +1,4 @@
-import Pages.AuthenticationPage;
-import Pages.CreateAccountPage;
-import Pages.HomePage;
-import Pages.MyAccountPage;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,15 +11,16 @@ public class BaseTest {
 
         public WebDriver driver;
         public WebDriverWait wait;
-        private String chromedriver = "webdriver.chrome.driver";
-        private String chromePath = "C:\\Chrome Drivers\\ChromeDriver 96.0.4664.45\\chromedriver.exe";
         public HomePage homePage;
         public AuthenticationPage authenticationPage;
         public CreateAccountPage createAccountPage;
         public MyAccountPage myAccountPage;
+        public ShoppingCartSummaryPage shoppingCartSummaryPage;
 
         @BeforeClass
         public void setUp() {
+            String chromedriver = "webdriver.chrome.driver";
+            String chromePath = "C:\\Chrome Drivers\\ChromeDriver 96.0.4664.45\\chromedriver.exe";
             System.setProperty(chromedriver, chromePath);
             driver = new ChromeDriver();
             driver.manage().window().maximize();
@@ -32,10 +30,11 @@ public class BaseTest {
             authenticationPage = new AuthenticationPage(driver);
             createAccountPage = new CreateAccountPage(driver);
             myAccountPage = new MyAccountPage(driver);
+            shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
         }
 
-//        @AfterClass
-//        public void tearDown(){
-//            driver.quit();
-//        }
+        @AfterClass
+        public void closeBrowser(){
+            driver.quit();
+        }
     }

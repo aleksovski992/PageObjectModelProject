@@ -12,7 +12,7 @@ public class MyAccountPage {
 
     public WebDriver driver;
     public WebDriverWait wait;
-    By myAccountPageHeading = By.id("uniform-id_gender1");
+    By myAccountPageHeading = By.className("page-heading");
 
     public MyAccountPage(WebDriver driver) {
         this.driver = driver;
@@ -22,9 +22,5 @@ public class MyAccountPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         String text = wait.until(ExpectedConditions.visibilityOfElementLocated(myAccountPageHeading)).getText();
         Assert.assertEquals("MY ACCOUNT", text);
-    }
-
-    public void navigateToHomePage() {
-        driver.get("http://automationpractice.com/index.php");
     }
 }

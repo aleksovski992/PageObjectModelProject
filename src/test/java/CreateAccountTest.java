@@ -1,25 +1,39 @@
 import org.apache.log4j.BasicConfigurator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class RunTests extends BaseTest {
+import java.util.List;
+
+public class CreateAccountTest extends BaseTest {
 
     @BeforeTest
     public void initialize() {
         BasicConfigurator.configure();
     }
 
+    @BeforeMethod
+    public void checkIfResourceLimitIsReached() {
+        List<WebElement> list = driver.findElements(By.xpath("//*[text()='The website is temporarily unable to service your request as it exceeded resource limit.']"));
+        if(list.size()>0) {
+            driver.close();
+            System.out.println("GOT INSIDE THE IF IN THE BEFORE METHOD");
+        }
+    }
+
     @Test
-    public void clickingOnSignInButton() {
+    public void createAccount() {
         homePage.clickSignInButton();
 
         authenticationPage.inputEmailCredentials();
         authenticationPage.clickOnCreateAccount();
 
         createAccountPage.clickOnTitleRadioBtn();
-        createAccountPage.inputFirstName();
-        createAccountPage.inputLastName();
-        createAccountPage.inputPassword();
+        createAccountPage.inputFirstName("Aleksandar");
+        createAccountPage.inputLastName("Aleksovski");
+        createAccountPage.inputPassword("AceAce!1234");
         createAccountPage.selectBirthDay(6);
         createAccountPage.selectBirthMonth(6);
         createAccountPage.selectBirthYear(1992);
@@ -32,11 +46,5 @@ public class RunTests extends BaseTest {
         createAccountPage.clickRegister();
 
         myAccountPage.verifyUserIsLogged();
-        myAccountPage.navigateToHomePage();
-
-        homePage.verifyNumOfPopularElements();
-        homePage.clickBestSellerTab();
-        homePage.verifyNumOfBestsellerElem();
-        homePage.addProductsAndProceedToCheckOut(3);
     }
 }

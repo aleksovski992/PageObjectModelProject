@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestAll">
+    <test name="CreateAccount">
+        <classes>
+            <class name="CreateAccountTest" />
+        </classes>
+    </test>
+    <test name="EndToEndOrder">
+        <classes>
+            <class name="EndToEndOrderTest" />
+        </classes>
+    </test>
+</suite>

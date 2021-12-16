@@ -30,7 +30,6 @@ public class HomePage {
 
     public void clickSignInButton() {
         driver.findElement(signInButton).click();
-        //wait = new WebDriverWait(driver, Duration.ofSeconds(40));
     }
 
     public void verifyNumOfPopularElements() {
