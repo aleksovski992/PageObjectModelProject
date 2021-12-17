@@ -4,13 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class CreateAccountTest extends BaseTest {
 
     @BeforeTest
-    public void initialize() {
+    public void logger() {
         BasicConfigurator.configure();
     }
 
