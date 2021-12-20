@@ -2,12 +2,12 @@
 <suite name="TestAll" parallel="tests" thread-count="2">
     <test name="CreateAccount">
         <classes>
-            <class name="CreateAccountTest" />
+            <class name="Tests.CreateAccountTest" />
         </classes>
     </test>
     <test name="EndToEndOrder">
         <classes>
-            <class name="EndToEndOrderTest" />
+            <class name="Tests.EndToEndOrderTest" />
         </classes>
     </test>
 </suite>

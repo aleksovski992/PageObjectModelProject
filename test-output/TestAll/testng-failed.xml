@@ -3,28 +3,15 @@
 <suite thread-count="2" parallel="tests" name="Failed suite [TestAll]" guice-stage="DEVELOPMENT">
   <test thread-count="2" parallel="tests" name="EndToEndOrder(failed)">
     <classes>
-      <class name="EndToEndOrderTest">
+      <class name="Tests.EndToEndOrderTest">
         <methods>
-          <include name="checkIfResourceLimitIsReached"/>
+          <include name="closeBrowser"/>
+          <include name="logger"/>
           <include name="setUp"/>
           <include name="orderProductsAndPay"/>
-          <include name="logger"/>
-          <include name="closeBrowser"/>
+          <include name="checkIfResourceLimitIsReached"/>
         </methods>
-      </class> <!-- EndToEndOrderTest -->
+      </class> <!-- Tests.EndToEndOrderTest -->
     </classes>
   </test> <!-- EndToEndOrder(failed) -->
-  <test thread-count="2" parallel="tests" name="CreateAccount(failed)">
-    <classes>
-      <class name="CreateAccountTest">
-        <methods>
-          <include name="logger"/>
-          <include name="setUp"/>
-          <include name="createAccount"/>
-          <include name="checkIfResourceLimitIsReached"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- CreateAccountTest -->
-    </classes>
-  </test> <!-- CreateAccount(failed) -->
 </suite> <!-- Failed suite [TestAll] -->
