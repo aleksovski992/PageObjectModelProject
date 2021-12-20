@@ -15,6 +15,9 @@ public class BaseTest {
         public CreateAccountPage createAccountPage;
         public MyAccountPage myAccountPage;
         public ShoppingCartSummaryPage shoppingCartSummaryPage;
+        String validationText = "\n" +
+                "The website is temporarily unable to service your request as it exceeded resource limit.\n" +
+                "Please try again later.\n";
 
         @BeforeClass
         public void setUp() {

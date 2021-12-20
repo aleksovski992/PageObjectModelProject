@@ -14,7 +14,7 @@ public class EndToEndOrderTest extends BaseTest {
 
     @BeforeMethod
     public void checkIfResourceLimitIsReached() {
-        List<WebElement> list = driver.findElements(By.xpath("//*[text()='The website is temporarily unable to service your request as it exceeded resource limit.']"));
+        List<WebElement> list = driver.findElements(By.xpath("//*[text()='" + validationText + "']"));
         if(list.size()>0) {
             driver.close();
             System.out.println("GOT INSIDE THE IF IN THE BEFORE METHOD");

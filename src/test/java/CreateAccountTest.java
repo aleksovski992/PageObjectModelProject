@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class CreateAccountTest extends BaseTest {
-
     @BeforeTest
     public void logger() {
         BasicConfigurator.configure();
@@ -15,7 +14,7 @@ public class CreateAccountTest extends BaseTest {
 
     @BeforeMethod
     public void checkIfResourceLimitIsReached() {
-        List<WebElement> list = driver.findElements(By.xpath("//*[text()='The website is temporarily unable to service your request as it exceeded resource limit.']"));
+        List<WebElement> list = driver.findElements(By.xpath("//*[text()='" + validationText + "']"));
         if(list.size()>0) {
             driver.close();
             System.out.println("GOT INSIDE THE IF IN THE BEFORE METHOD");

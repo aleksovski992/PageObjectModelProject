@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [TestAll]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="EndToEndOrder(failed)">
+    <classes>
+      <class name="EndToEndOrderTest">
+        <methods>
+          <include name="checkIfResourceLimitIsReached"/>
+          <include name="setUp"/>
+          <include name="orderProductsAndPay"/>
+          <include name="logger"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- EndToEndOrderTest -->
+    </classes>
+  </test> <!-- EndToEndOrder(failed) -->
+  <test thread-count="2" parallel="tests" name="CreateAccount(failed)">
+    <classes>
+      <class name="CreateAccountTest">
+        <methods>
+          <include name="logger"/>
+          <include name="setUp"/>
+          <include name="createAccount"/>
+          <include name="checkIfResourceLimitIsReached"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- CreateAccountTest -->
+    </classes>
+  </test> <!-- CreateAccount(failed) -->
+</suite> <!-- Failed suite [TestAll] -->
