@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RunTestsMultipleTimes {
+public class RunTestsMultipleTimesTest {
     @Test
     public void runTestsMultipleTimes() {
         for(int i=0;i<3;i++)

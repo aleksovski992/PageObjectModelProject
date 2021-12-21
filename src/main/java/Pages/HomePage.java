@@ -3,16 +3,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import java.time.Duration;
 import java.util.List;
 
 
-public class HomePage {
-
-    public WebDriver driver;
-    public WebDriverWait wait;
+public class HomePage extends BasePage {
     List<WebElement> listOfBestSellersElem;
     By signInButton = By.className("login");
     By popularElements = By.cssSelector("ul#homefeatured li");
@@ -23,6 +18,7 @@ public class HomePage {
     By proceedToCheckout = By.cssSelector("a[href='http://automationpractice.com/index.php?controller=order']");
 
     public HomePage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
@@ -51,7 +47,6 @@ public class HomePage {
             //click on the i-th bestsellers element
             listOfBestSellersElem.get(i).click();
             //click on the ADD button
-            wait = new WebDriverWait(driver, Duration.ofSeconds(40));
             wait.until(ExpectedConditions.visibilityOfElementLocated(addToCardBtn)).click();
             if(i<(numOfProducts-1))
                 //click on Continue shopping

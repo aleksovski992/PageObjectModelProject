@@ -1,4 +1,7 @@
 package Tests;
+import Pages.AuthenticationPage;
+import Pages.CreateAccountPage;
+import Pages.MyAccountPage;
 import org.testng.annotations.Test;
 
 public class CreateAccountTest extends BaseTest {
@@ -6,9 +9,11 @@ public class CreateAccountTest extends BaseTest {
     public void createAccount() {
         homePage.clickSignInButton();
 
+        AuthenticationPage authenticationPage = new AuthenticationPage(driver);
         authenticationPage.inputEmailCredentials();
         authenticationPage.clickOnCreateAccount();
 
+        CreateAccountPage createAccountPage = new CreateAccountPage(driver);
         createAccountPage.clickOnTitleRadioBtn();
         createAccountPage.inputFirstName("Aleksandar");
         createAccountPage.inputLastName("Aleksovski");
@@ -24,6 +29,7 @@ public class CreateAccountTest extends BaseTest {
         createAccountPage.inputMobilePhone("0038970123456");
         createAccountPage.clickRegister();
 
+        MyAccountPage myAccountPage = new MyAccountPage(driver);
         myAccountPage.verifyUserIsLogged();
     }
 }

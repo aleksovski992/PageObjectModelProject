@@ -1,4 +1,6 @@
 package Tests;
+import Pages.AuthenticationPage;
+import Pages.ShoppingCartSummaryPage;
 import org.testng.annotations.Test;
 
 public class EndToEndOrderTest extends BaseTest {
@@ -11,8 +13,10 @@ public class EndToEndOrderTest extends BaseTest {
         homePage.verifyNumOfBestsellerElem();
         homePage.addProductsAndProceedToCheckOut(3);
 
+        ShoppingCartSummaryPage shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
         shoppingCartSummaryPage.clickProceedToCheckoutBtn();
 
+        AuthenticationPage authenticationPage = new AuthenticationPage(driver);
         authenticationPage.inputEmailAddressLogin("aleksandar.aleksovski@scalefocus.com");
         authenticationPage.inputPasswordLogin("AceAce!1234");
         authenticationPage.clickSignInBtn();

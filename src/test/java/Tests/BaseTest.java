@@ -16,10 +16,6 @@ public class BaseTest {
         public WebDriver driver;
         public WebDriverWait wait;
         public HomePage homePage;
-        public AuthenticationPage authenticationPage;
-        public CreateAccountPage createAccountPage;
-        public MyAccountPage myAccountPage;
-        public ShoppingCartSummaryPage shoppingCartSummaryPage;
         String validationText = "\n" +
                 "The website is temporarily unable to service your request as it exceeded resource limit.\n" +
                 "Please try again later.\n";
@@ -39,10 +35,6 @@ public class BaseTest {
             wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             driver.get("http://automationpractice.com/index.php");
             homePage = new HomePage(driver);
-            authenticationPage = new AuthenticationPage(driver);
-            createAccountPage = new CreateAccountPage(driver);
-            myAccountPage = new MyAccountPage(driver);
-            shoppingCartSummaryPage = new ShoppingCartSummaryPage(driver);
         }
 
         @BeforeMethod @AfterMethod

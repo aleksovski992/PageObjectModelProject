@@ -2,14 +2,9 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 import java.util.Random;
 
-public class AuthenticationPage {
-
-    public WebDriver driver;
-    public WebDriverWait wait;
+public class AuthenticationPage extends BasePage {
     By emailAddress = By.id("email_create");
     By createAccountButton = By.id("SubmitCreate");
     By emailAddressLoginTxtBox = By.xpath("/html/body/div/div[2]/div/div[3]/div/div/div[2]/form/div/div[1]/input");
@@ -28,11 +23,11 @@ public class AuthenticationPage {
     }
 
     public AuthenticationPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
     public void inputEmailCredentials() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         wait.until(ExpectedConditions.visibilityOfElementLocated(emailAddress)).sendKeys(getSaltString() + "@scalefocus.com");
     }
 

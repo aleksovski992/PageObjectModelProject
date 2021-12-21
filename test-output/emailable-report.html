@@ -9,29 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">TestAll</th></tr>
-<tr><td><a href="#t0">CreateAccount</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">51,737</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">EndToEndOrder</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">68,524</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">1</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">120,261</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">CreateAccount</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">15,667</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">EndToEndOrder</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,069</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">43,736</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestAll</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CreateAccount &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests.CreateAccountTest</td><td><a href="#m0">createAccount</a></td><td rowspan="1">1640011901730</td><td rowspan="1">38495</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">EndToEndOrder &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Tests.EndToEndOrderTest</td><td><a href="#m1">orderProductsAndPay</a></td><td rowspan="1">1640011901837</td><td rowspan="1">55202</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestAll</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CreateAccount &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests.CreateAccountTest</td><td><a href="#m0">createAccount</a></td><td rowspan="1">1640087531085</td><td rowspan="1">9230</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">EndToEndOrder &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">Tests.EndToEndOrderTest</td><td><a href="#m1">orderProductsAndPay</a></td><td rowspan="1">1640087531133</td><td rowspan="1">21569</td></tr></tbody>
 </table>
 <h2>CreateAccount</h2><h3 id="m0">Tests.CreateAccountTest#createAccount</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>EndToEndOrder</h2><h3 id="m1">Tests.EndToEndOrderTest#orderProductsAndPay</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: a[href=&apos;http://automationpractice.com/index.php?controller=order&amp;step=1&apos;] (tried for 40 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.1.0&apos;, revision: &apos;87802e897b&apos;
-System info: host: &apos;NTB650&apos;, ip: &apos;192.168.100.191&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\ALEKS~1.ALE\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:60732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60732/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 77a92e05fb4257ecd2c1926f616ec16a
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at Pages.ShoppingCartSummaryPage.clickProceedToCheckoutBtn(ShoppingCartSummaryPage.java:25)
-	at Tests.EndToEndOrderTest.orderProductsAndPay(EndToEndOrderTest.java:20)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>EndToEndOrder</h2><h3 id="m1">Tests.EndToEndOrderTest#orderProductsAndPay</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
